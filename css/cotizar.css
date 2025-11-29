@@ -1,0 +1,436 @@
+/* Sección Cotizar - Paleta Negro, Morado Neón y Blanco */
+.cotizar-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #000000 100%);
+    padding: 120px 2rem 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de partículas animadas en el fondo */
+.cotizar-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(139, 0, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 0, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(138, 43, 226, 0.08) 0%, transparent 50%);
+    animation: backgroundPulse 8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes backgroundPulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+.cotizar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Header de Cotizar */
+.cotizar-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.cotizar-title {
+    color: #ffffff;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(139, 0, 255, 0.5);
+    position: relative;
+}
+
+.cotizar-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #8b00ff, #da00ff, transparent);
+    border-radius: 2px;
+}
+
+.cotizar-subtitle {
+    color: #e6e6e6;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 30px auto 0;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Contenido Principal */
+.cotizar-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* Formulario Simplificado */
+.form-container {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(45, 27, 61, 0.8) 100%);
+    padding: 50px 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(139, 0, 255, 0.2);
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #8b00ff, #da00ff, #8b00ff);
+    border-radius: 17px;
+    opacity: 0.3;
+    filter: blur(10px);
+    z-index: -1;
+    animation: borderGlow 3s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.4; }
+}
+
+.cotizar-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.form-input,
+.form-textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(139, 0, 255, 0.3);
+    border-radius: 10px;
+    padding: 18px 20px;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    font-family: inherit;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #8b00ff;
+    box-shadow: 0 0 25px rgba(139, 0, 255, 0.4);
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.95rem;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 150px;
+    line-height: 1.5;
+}
+
+/* Botón de Envío */
+.submit-button {
+    background: linear-gradient(135deg, #8b00ff 0%, #da00ff 100%);
+    border: none;
+    border-radius: 10px;
+    padding: 20px 35px;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.submit-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 15px 35px rgba(139, 0, 255, 0.5),
+        0 0 50px rgba(218, 0, 255, 0.3);
+}
+
+.submit-button:hover::before {
+    left: 100%;
+}
+
+.submit-button:active {
+    transform: translateY(-1px);
+}
+
+/* Información de Contacto */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.info-card {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(45, 27, 61, 0.6) 100%);
+    padding: 30px 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(139, 0, 255, 0.2);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(139, 0, 255, 0.4);
+    box-shadow: 0 15px 30px rgba(139, 0, 255, 0.25);
+}
+
+.info-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, rgba(139, 0, 255, 0.2) 0%, rgba(218, 0, 255, 0.1) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 1.8rem;
+    color: #8b00ff;
+    border: 2px solid rgba(139, 0, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.info-card:hover .info-icon {
+    transform: scale(1.1);
+    color: #da00ff;
+    border-color: rgba(218, 0, 255, 0.5);
+}
+
+.info-card h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.info-card p {
+    color: #e6e6e6;
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Contacto Directo */
+.direct-contact {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(45, 27, 61, 0.8) 100%);
+    padding: 35px 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(139, 0, 255, 0.2);
+    text-align: center;
+}
+
+.direct-contact h4 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.whatsapp-button,
+.email-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 18px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.whatsapp-button {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: #ffffff;
+}
+
+.email-button {
+    background: linear-gradient(135deg, #8b00ff 0%, #da00ff 100%);
+    color: #ffffff;
+}
+
+.whatsapp-button:hover,
+.email-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Partículas flotantes */
+.floating-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(139, 0, 255, 0.6);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.floating-particle:nth-child(2n) {
+    background: rgba(218, 0, 255, 0.4);
+    animation-delay: -2s;
+}
+
+.floating-particle:nth-child(3n) {
+    background: rgba(255, 255, 255, 0.3);
+    animation-delay: -4s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(-20px) translateX(10px); }
+    50% { transform: translateY(-10px) translateX(20px); }
+    75% { transform: translateY(-30px) translateX(-10px); }
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+    .cotizar-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .cotizar-title {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cotizar-section {
+        padding: 100px 1.5rem 60px;
+    }
+    
+    .cotizar-title {
+        font-size: 2.5rem;
+    }
+    
+    .cotizar-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .form-container {
+        padding: 40px 30px;
+    }
+    
+    .info-card {
+        padding: 25px 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .cotizar-section {
+        padding: 90px 1rem 40px;
+    }
+    
+    .cotizar-title {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+    
+    .cotizar-subtitle {
+        font-size: 1rem;
+    }
+    
+    .form-container {
+        padding: 30px 25px;
+    }
+    
+    .submit-button {
+        padding: 18px 30px;
+        font-size: 1.1rem;
+    }
+    
+    .info-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .whatsapp-button,
+    .email-button {
+        padding: 16px 20px;
+        font-size: 1rem;
+    }
+}
+
+/* Estados de validación del email */
+.form-input:valid {
+    border-color: rgba(0, 200, 83, 0.5) !important;
+}
+
+.form-input:invalid {
+    border-color: rgba(255, 68, 68, 0.5) !important;
+}
+
+/* Estado de advertencia (email sospechoso) */
+.form-input.warning {
+    border-color: rgba(255, 152, 0, 0.5) !important;
+}
+
+/* Notificación de advertencia */
+.notification.warning {
+    background: linear-gradient(135deg, #ff9800, #ff5722) !important;
+}
