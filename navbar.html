@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar con Video - SebasFR</title>
+    <link rel="stylesheet" href="css/navbar-style.css">
+</head>
+<body>
+    <!-- Video de fondo -->
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="assets/videos/background-video.mp4" type="video/mp4">
+            <source src="assets/videos/background-video.webm" type="video/webm">
+            <!-- Fallback para navegadores que no soportan video -->
+            <img src="assets/images/fallback-image.jpg" alt="Background fallback">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="#inicio">
+                        <img src="assets/images/logo.png" alt="SebasFR Logo" class="logo-image">
+                    </a>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#inicio" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#sobre-mi" class="nav-link">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#proyectos" class="nav-link">Porque elegirnos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#habilidades" class="nav-link">Como trabajamos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contacto" class="nav-link">Cotizar web</a>
+                    </li>
+                </ul>
+
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <script src="js/navbar.js"></script>
+</body>
+</html>
